@@ -2,15 +2,7 @@ import React, { useState } from 'react';
 import { TextInputProps } from 'react-native';
 import { Control, Controller } from 'react-hook-form';
 
-import {
-  Container,
-  Label,
-  Error,
-  InputContainer,
-  FormInput,
-  ToggleShowPassButton,
-  Icon
-} from './styles';
+import {Container,Label,Error,InputContainer,FormInput,ToggleShowPassButton,Icon} from './styles';
 
 interface Props extends TextInputProps {
   control: Control;
@@ -19,14 +11,7 @@ interface Props extends TextInputProps {
   error: string;
 }
 
-export function Input({
-  name,
-  control,
-  title,
-  error,
-  secureTextEntry,
-  ...rest
-}: Props) {
+export function Input({name,control,title,error,secureTextEntry,...rest}: Props) {
   const [passwordHidden, setPasswordHidden] = useState(true);
 
   return (

@@ -1,18 +1,10 @@
 import React, { useState, useCallback } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFocusEffect } from '@react-navigation/native';
-
 import { Header } from '../../components/Header';
 import { SearchBar } from '../../components/SearchBar';
 import { LoginDataItem } from '../../components/LoginDataItem';
-
-import {
-  Container,
-  Metadata,
-  Title,
-  TotalPassCount,
-  LoginList,
-} from './styles';
+import {Container,Metadata,Title,TotalPassCount,LoginList,} from './styles';
 
 interface LoginDataProps {
   id: string;
@@ -51,8 +43,7 @@ export function Home() {
         user={{
           name: 'Rocketseat',
           avatar_url: 'https://i.ibb.co/ZmFHZDM/rocketseat.jpg'
-        }}
-      />
+        }}/>
       <Container>
         <SearchBar
           placeholder="Qual senha você procura?"
@@ -60,7 +51,6 @@ export function Home() {
           value={searchText}
           returnKeyType="search"
           onSubmitEditing={handleFilterLoginData}
-
           onSearchButtonPress={handleFilterLoginData}
         />
 
@@ -69,8 +59,7 @@ export function Home() {
           <TotalPassCount>
             {searchListData.length
               ? `${`${searchListData.length}`.padStart(2, '0')} ao total`
-              : 'Nada a ser exibido'
-            }
+              : 'Nada a ser exibido'}
           </TotalPassCount>
         </Metadata>
 
@@ -81,8 +70,7 @@ export function Home() {
             return <LoginDataItem
               service_name={loginData.service_name}
               email={loginData.email}
-              password={loginData.password}
-            />
+              password={loginData.password}/>
           }}
         />
       </Container>
